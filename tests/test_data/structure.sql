@@ -1,22 +1,22 @@
-DROP TABLE IF EXISTS `test_taxonomy_posts`;
+DROP TABLE IF EXISTS `taxonomy_posts`;
 
-CREATE TABLE `test_taxonomy_posts` (
+CREATE TABLE `taxonomy_posts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-DROP TABLE IF EXISTS `test_taxonomy_authors`;
+DROP TABLE IF EXISTS `taxonomy_authors`;
 
-CREATE TABLE `test_taxonomy_authors` (
+CREATE TABLE `taxonomy_authors` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-DROP TABLE IF EXISTS `test_vocabularies`;
+DROP TABLE IF EXISTS `vocabularies`;
 
-CREATE TABLE `test_vocabularies` (
+CREATE TABLE `vocabularies` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `is_hidden` int(11) DEFAULT NULL,
@@ -26,9 +26,9 @@ CREATE TABLE `test_vocabularies` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-DROP TABLE IF EXISTS `test_terms`;
+DROP TABLE IF EXISTS `terms`;
 
-CREATE TABLE `test_terms` (
+CREATE TABLE `terms` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `slug` varchar(255) NULL,
@@ -40,12 +40,16 @@ CREATE TABLE `test_terms` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-DROP TABLE IF EXISTS `test_terms_items`;
+DROP TABLE IF EXISTS `terms_items`;
 
-CREATE TABLE `test_terms_items` (
+CREATE TABLE `terms_items` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `term_id` int(11) NULL,
   `item_id` int(11) NULL,
   `item_model` varchar(255) NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO vocabularies (id, name, is_deleted) VALUES
+(1, 'Types', 0),
+(2, 'Styles', 0);

@@ -1,5 +1,10 @@
 <?php defined('SYSPATH') OR die('No direct script access.');
 
+/**
+ * @author     Ivan Kerin <ikerin@gmail.com>
+ * @copyright  (c) 2014 Clippings Ltd.
+ * @license    http://spdx.org/licenses/BSD-3-Clause
+ */
 class Kohana_Jam_Behavior_Term extends Jam_Behavior
 {
 	public function builder_call_vocabulary(Database_Query_Builder $query, Jam_Event_Data $data, $name)

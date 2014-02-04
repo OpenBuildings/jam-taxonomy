@@ -5,15 +5,12 @@
  *
  * @package  Jam
  */
-class Model_Test_Taxonomy_Post extends Jam_Model {
+class Model_Taxonomy_Post extends Jam_Model {
 
 	public static function initialize(Jam_Meta $meta)
 	{
-		// Set database to connect to
-		$meta->db(Kohana::TESTING);
-
 		$meta->associations(array(
-			'types' => Jam::association('taxonomy_terms', array('vocabulary' => 'Types', 'vocabulary_model' => 'test_vocabulary', 'join_table' => 'test_terms_items', 'foreign_model' => 'test_term'))
+			'types' => Jam::association('taxonomy_terms', array('vocabulary' => 'Types'))
 		));
 
 		// Define fields

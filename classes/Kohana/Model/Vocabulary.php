@@ -1,5 +1,10 @@
 <?php defined('SYSPATH') OR die('No direct script access.');
 
+/**
+ * @author     Ivan Kerin <ikerin@gmail.com>
+ * @copyright  (c) 2014 Clippings Ltd.
+ * @license    http://spdx.org/licenses/BSD-3-Clause
+ */
 class Kohana_Model_Vocabulary extends Jam_Model
 {
 	public static function initialize(Jam_Meta $meta)
@@ -8,7 +13,7 @@ class Kohana_Model_Vocabulary extends Jam_Model
 			->table('vocabularies')
 			->name_key('name');
 
-		$meta->behaviors(array(												
+		$meta->behaviors(array(
 			'paranoid' => Jam::behavior('paranoid', array()),
 		));
 
@@ -19,10 +24,10 @@ class Kohana_Model_Vocabulary extends Jam_Model
 		$meta->fields(array(
 			'id' => Jam::field('primary'),
 			'name' => Jam::field('string'),
-			
-			// whether to show / hide the whole vocabulary from the frontend			
-			'is_hidden' => Jam::field('boolean', array()),  
-							
+
+			// whether to show / hide the whole vocabulary from the frontend
+			'is_hidden' => Jam::field('boolean', array()),
+
 			// Analitics
 			'created_at' => Jam::field('timestamp', array('auto_now_create' => TRUE, 'format' => 'Y-m-d H:i:s')),
 			'updated_at' => Jam::field('timestamp', array('auto_now_update' => TRUE, 'format' => 'Y-m-d H:i:s', 'label' => "Last edited")),

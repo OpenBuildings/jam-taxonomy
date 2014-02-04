@@ -1,5 +1,10 @@
 <?php defined('SYSPATH') OR die('No direct script access.');
 
+/**
+ * @author     Ivan Kerin <ikerin@gmail.com>
+ * @copyright  (c) 2014 Clippings Ltd.
+ * @license    http://spdx.org/licenses/BSD-3-Clause
+ */
 class Kohana_Jam_Association_Taxonomy_Items extends Jam_Association_Collection {
 
 	public $join_table_dependent = TRUE;
@@ -29,7 +34,7 @@ class Kohana_Jam_Association_Taxonomy_Items extends Jam_Association_Collection {
 	{
 		$collection = Jam::all($this->foreign_model);
 
-		return $collection	
+		return $collection
 			->join_table($this->join_table)
 				->context_model($this->foreign_model)
 				->on($this->join_table.'.'.$this->item_polymorphic_key, '=', DB::expr(':model', array(':model' => $this->foreign_model)))
@@ -66,7 +71,7 @@ class Kohana_Jam_Association_Taxonomy_Items extends Jam_Association_Collection {
 		$query = DB::insert($this->join_table)
 			->columns(array($this->term_key, $this->item_polymorphic_key, $this->item_key));
 
-		foreach ($ids as $id) 
+		foreach ($ids as $id)
 		{
 			$query->values(array($model->id(), $this->foreign_model, $id));
 		}

@@ -1,5 +1,10 @@
 <?php defined('SYSPATH') OR die('No direct script access.');
 
+/**
+ * @author     Ivan Kerin <ikerin@gmail.com>
+ * @copyright  (c) 2014 Clippings Ltd.
+ * @license    http://spdx.org/licenses/BSD-3-Clause
+ */
 class Kohana_Jam_Association_Taxonomy_Terms extends Jam_Association_Collection {
 
 	public $vocabulary = NULL;
@@ -31,7 +36,7 @@ class Kohana_Jam_Association_Taxonomy_Terms extends Jam_Association_Collection {
 			$this->vocabulary_foreign_key = Jam::meta($this->foreign_model)->association('vocabulary')->foreign_key;
 		}
 	}
-	
+
 	public function vocabulary_ids()
 	{
 		if ($this->vocabulary AND $this->_vocabulary_ids === NULL)
@@ -66,7 +71,7 @@ class Kohana_Jam_Association_Taxonomy_Terms extends Jam_Association_Collection {
 	{
 		$collection = Jam::all($this->foreign_model);
 
-		$collection	
+		$collection
 			->join_table($this->join_table)
 				->context_model($this->foreign_model)
 				->on($this->join_table.'.'.$this->term_key, '=', ':primary_key')
@@ -111,7 +116,7 @@ class Kohana_Jam_Association_Taxonomy_Terms extends Jam_Association_Collection {
 		$query = DB::insert($this->join_table)
 			->columns(array($this->item_key, $this->item_polymorphic_key, $this->term_key));
 
-		foreach ($ids as $id) 
+		foreach ($ids as $id)
 		{
 			$query->values(array($model->id(), $this->model, $id));
 		}

@@ -1,5 +1,10 @@
 <?php defined('SYSPATH') OR die('No direct script access.');
 
+/**
+ * @author     Ivan Kerin <ikerin@gmail.com>
+ * @copyright  (c) 2014 Clippings Ltd.
+ * @license    http://spdx.org/licenses/BSD-3-Clause
+ */
 class Kohana_Model_Terms_Item extends Jam_Model {
 
 	public static function initialize(Jam_Meta $meta)
@@ -16,5 +21,4 @@ class Kohana_Model_Terms_Item extends Jam_Model {
 			'id' => Jam::field('primary'),
 		));
 	}
-	
 }
