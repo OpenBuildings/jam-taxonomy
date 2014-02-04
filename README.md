@@ -1,5 +1,6 @@
 # Jam Taxonomy
 
+[![Build Status](https://travis-ci.org/OpenBuildings/jam-taxonomy.png?branch=master)](https://travis-ci.org/OpenBuildings/jam-taxonomy)
 
 ## License
 
