@@ -88,7 +88,7 @@ class ItemsTest extends PHPUnit_Framework_TestCase {
 
 		$this->assertInstanceOf('Jam_Array_Association', $result);
 
-		$this->assertEquals($expected_sql, (string) $result);
+		$this->assertEquals($expected_sql, $result->__toString());
 
 		if ($expected_ids !== NULL)
 		{
