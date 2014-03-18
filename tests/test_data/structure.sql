@@ -14,6 +14,14 @@ CREATE TABLE `taxonomy_authors` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+DROP TABLE IF EXISTS `taxonomy_events`;
+
+CREATE TABLE `taxonomy_events` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 DROP TABLE IF EXISTS `vocabularies`;
 
 CREATE TABLE `vocabularies` (
