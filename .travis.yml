@@ -5,16 +5,22 @@ php:
   - 5.4
   - 5.5
 
-script:
-  - phpunit --coverage-clover build/logs/clover.xml
+notifications:
+  email: false
+  slack:
+    secure: HXK9PSEYm7/i85K7w/gDMhCSjP2aR6IvqJU4ToQ+9xmFkPBPIAPnYdq+S62pI2Y4nm5eEq+FvJIDJkzkwyyyXPpyNF4wKvYCHS48vhNNOGJIDNWmVK3+2CEycejS4aeQTYbFO3YxV1pIb+yJDqENjJ0+wHVqNQ7Q8tprBzVLC4U=
 
 install:
-  - composer install
+  - composer selfupdate
+  - composer install --no-interaction
 
 before_script:
   - mkdir -p build/logs
   - mysql -e 'create database `test-jam-taxonomy`;'
   - mysql --default-character-set=utf8 test-jam-taxonomy < tests/test_data/structure.sql
+
+script:
+  - phpunit --coverage-clover build/logs/clover.xml
 
 after_script:
   - wget https://scrutinizer-ci.com/ocular.phar
