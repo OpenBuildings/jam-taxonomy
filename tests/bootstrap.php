@@ -21,14 +21,16 @@ Kohana::modules(array(
 Kohana::$config
 	->load('database')
 		->set('default', array(
-			'type'       => 'MySQL',
+			'type'       => 'PDO',
 			'connection' => array(
+                'dsn' => 'mysql:host=localhost;dbname=test-jam-taxonomy',
 				'hostname'   => 'localhost',
 				'database'   => 'test-jam-taxonomy',
 				'username'   => 'root',
 				'password'   => '',
 				'persistent' => TRUE,
 			),
+            'identifier'   => '`',
 			'table_prefix' => '',
 			'charset'      => 'utf8',
 			'caching'      => FALSE,
