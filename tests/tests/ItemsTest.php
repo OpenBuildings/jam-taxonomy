@@ -1,5 +1,7 @@
 <?php defined('SYSPATH') OR die('No direct script access.');
 
+use PHPUnit\Framework\TestCase;
+
 /**
  * Tests Manytomany fields.
  *
@@ -7,7 +9,7 @@
  * @group   jam-taxonomy
  * @group   jam-taxonomy.items
  */
-class ItemsTest extends PHPUnit_Framework_TestCase {
+class ItemsTest extends TestCase {
 
 	public $meta;
 

@@ -29,6 +29,9 @@ notifications:
   slack:
     secure: j0M/YHcUXUB3WIkGM2zVodP7FePghAJ4WsqsloTHfelGTbO3MNfA7bQy+rqixm3bSd4EoAa5AKt74eyDzORkpovXQX0gcP6HsskSNoRUthP1tNPj0c8/yvpWExOcQQO3l39vAJKpdKGOp/KXraU0j36m9lbte2e+Pyg0kUHKDaA=
 
+services:
+  - mysql
+
 before_install: travis_retry composer selfupdate --preview
 
 install:
