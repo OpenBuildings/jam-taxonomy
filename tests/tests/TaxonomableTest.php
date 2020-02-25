@@ -1,5 +1,7 @@
 <?php defined('SYSPATH') OR die('No direct script access.');
 
+use PHPUnit\Framework\TestCase;
+
 /**
  * Unit test for Jam_Behavior_Taxonomable
  *
@@ -7,7 +9,7 @@
  * @group   jam-taxonomy
  * @group   jam-taxonomy.taxonomable
  */
-class TaxonomableTest extends PHPUnit_Framework_TestCase {
+class TaxonomableTest extends TestCase {
 
     public function setUp()
     {
