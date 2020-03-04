@@ -15,11 +15,11 @@
 	"require": {
 		"php": "^7.1",
 		"composer/installers": "*",
-        "openbuildings/jam": "^0.5"
+        "openbuildings/jam": "^0.6"
     },
     "require-dev": {
-		"openbuildings/jam": "^0.5.13",
-		"openbuildings/kohana-test-bootstrap": "^0.2.0",
+		"openbuildings/jam": "^0.6",
+		"openbuildings/kohana-test-bootstrap": "^0.2",
 		"phpunit/phpunit": "^7"
 	},
 	"config": {
